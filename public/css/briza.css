@@ -1,0 +1,326 @@
+body{
+  background-color:#FFFFFF;
+  overflow: hidden;
+
+}
+.transparent-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1900px;
+  height: 1080px;
+  background-color: rgba(0, 0, 0, 0.8); /* Define a cor de fundo com transparência */
+  z-index: -2; /* Garanta que este div esteja acima de outros elementos */
+  pointer-events: none; /* Permite que cliques e eventos passem pelo div */
+}
+.video-bg {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+z-index: -3;
+}
+
+video {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+
+
+/* player music  */
+.audio-player {
+z-index: 4;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 300px;
+height: 80px;
+background-color: rgba(255, 255, 255, 0.);
+  border-radius: 8px;
+  
+padding: 8px;
+box-sizing: border-box;
+}
+
+.player-controls {
+background-color: rgba(0, 0, 0, 0.1);
+z-index: 1;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+}
+
+.song-info {
+margin-bottom: 4px;
+color: #ffffff;
+}
+
+.song-title {
+font-size: 16px;
+color: #ffffff;
+margin: 0;
+}
+
+.artist {
+font-size: 12px;
+color: #fafafa;
+margin: 0;
+}
+
+.progress-bar {
+
+width: 100%;
+height: 4px;
+background-color: #473636;
+border-radius: 2px;
+overflow: hidden;
+}
+
+.progress {
+width: 0;
+height: 100%;
+background-color: #ffffff;
+animation: progress-animation 10s linear infinite;
+}
+
+.buttons {
+display: flex;
+align-items: center;
+margin-top: 4px;
+
+}
+
+button {
+background: none;
+border: none;
+cursor: pointer;
+outline: none;
+}
+
+.play-btn,
+.pause-btn,
+.skip-btn,
+.volume-btn {
+font-size: 16px;
+color: #666;
+margin-right: 8px;
+transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover,
+.skip-btn:hover,
+.volume-btn:hover {
+transform: scale(1.2);
+}
+
+.volume-slider {
+width: 100px;
+height: 5px;
+background-color: #ccc;
+position: relative;
+margin-left: 10px;
+}
+
+.volume-slider-bar {
+height: 100%;
+background-color: #666;
+}
+
+.volume-slider-handle {
+width: 16px;
+height: 16px;
+background-color: #666;
+position: absolute;
+top: 50%;
+transform: translate(-50%, -50%);
+border-radius: 50%;
+cursor: pointer;
+}
+.chat-card {
+flex-direction: column;
+
+z-index: 10000;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 900px;
+height: 800px;
+background-color: #52434367;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+
+}
+
+.chat-header {
+padding: 25px;
+background-color: rgba(0, 0, 0, 0.1);
+
+display: flex;
+align-items: center;
+}
+
+.chat-header .h2 {
+position: absolute;
+left: 420px;
+font-size: 22px;
+padding-top: 15px;
+padding-bottom: 15px;
+color: #fcfcfc;
+}
+/* Define a cor de fundo da barra de rolagem */
+.chatBox::-webkit-scrollbar {
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Define a cor do track (a área ao redor da alça da barra de rolagem) */
+.chatBox::-webkit-scrollbar-track {
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 51px;
+}
+
+/* Define a cor da alça da barra de rolagem */
+.chatBox::-webkit-scrollbar-thumb {
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 51px; /* Arredonda as bordas da alça */
+}
+
+/* Define a cor da alça da barra de rolagem quando o cursor passa sobre ela */
+.chatBox::-webkit-scrollbar-thumb:hover {
+background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+/* Define a largura da alça da barra de rolagem */
+.chatBox::-webkit-scrollbar-thumb:vertical {
+width: 11px;
+}
+
+/* Define a altura da alça da barra de rolagem horizontal */
+.chatBox::-webkit-scrollbar-thumb:horizontal {
+height: 8px;
+}
+
+.chatBox {
+overflow-y: auto; /* Habilita a rolagem vertical */
+margin-bottom: 35px;
+margin-top: 25px;
+padding-top: 7px;
+display: flex;
+
+max-height:900px;
+width: 1240px;
+padding-bottom: 25px;
+justify-content: flex-end; /* Centraliza verticalmente as mensagens no final */
+align-items: center; /* Centraliza horizontalmente as mensagens */
+margin-top: auto; /* Move o chatbox para baixo da tela */
+
+
+}
+
+
+
+
+.message {
+margin-bottom: 10px;
+padding: 25px;
+border-radius: 5px;
+}
+
+
+
+.message.incoming {
+align-self: flex-end;
+text-align: right;
+margin: 5px;
+padding: 10px;
+background-color: rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+max-width: 70%;
+}
+
+.message.outgoing {
+align-self: flex-start;
+text-align: left;
+margin: 5px;
+padding: 10px;
+background-color: rgba(0, 0, 0, 0.3);
+border-radius: 10px;
+max-width: 70%;
+}
+
+.message p {
+font-size: 16px;
+color: #ffffff;
+margin: 0;
+}
+
+.chat-footer {
+position: absolute;
+width: 800px;
+top: 86%;
+padding: 50px;
+background-color: rgba(0, 0, 0, 0.1);
+display: flex;
+}
+
+.chat-footer input[type="text"] {
+
+margin: -5px;
+position: absolute;
+top: 35px;
+left: 120px;
+background: none;
+border: none;
+outline: none;
+width: 900px;
+padding: 10px 20px;
+font-size: 16px;
+border-radius: 9999px;
+box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+color: #ebebeb;
+}
+
+#userInput{
+position: absolute;
+width: 750px;
+left: 70px;
+}
+
+
+
+
+@keyframes chatAnimation {
+0% {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.chat-card .message {
+font-size: 20px;
+color: #fff;
+animation: chatAnimation 0.3s ease-in-out;
+animation-fill-mode: both;
+animation-delay: 0.1s;
+}
+
+.chat-card .message:nth-child(even) {
+animation-delay: 0.2s;
+}
+
+.chat-card .message:nth-child(odd) {
+animation-delay: 0.3s;
+}
