@@ -1,6 +1,9 @@
 const axios = require('axios');
+require('dotenv').config();
 
-const API_KEY = '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';
+console.log('API_KEY:', process.env.API_KEY);
+const API_KEY = process.env.API_KEY;
+
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 const MODEL_ID = 'gpt-3.5-turbo-16k';
 
