@@ -179,7 +179,7 @@ body {
     left: 0;
     width: 2200px;
     height: 1280px;
-    background-color: rgba(255, 255, 255, 0.1); /* Define a cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.4); /* Define a cor de fundo com transparência */
     z-index: 999; /* Garanta que este div esteja acima de outros elementos */
     pointer-events: none; /* Permite que cliques e eventos passem pelo div */
   }
